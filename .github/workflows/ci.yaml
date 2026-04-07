@@ -2,7 +2,7 @@ name: CI - Dog API Tests
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "*" ]
   pull_request:
 
 jobs:
