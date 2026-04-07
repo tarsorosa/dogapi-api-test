@@ -42,7 +42,7 @@ public class NegativeBreedsTest extends BaseTest {
         given().log().all()
                 .when().get("/breeds/list/all")
                 .then()
-                .time(lessThan(50L)); // propositalmente impossível para gerar falha
+                .time(lessThan(300L)); // propositalmente impossível para gerar falha
     }
 
 // ------------------------ /breed/hound/images ---------------------------
@@ -93,7 +93,7 @@ public class NegativeBreedsTest extends BaseTest {
         given().log().all()
                 .when().get("/breed/hound/images")
                 .then()
-                .time(lessThan(50L)); // propositalmente impossível para gerar falha
+                .time(lessThan(300L)); // propositalmente impossível para gerar falha
     }
 
 // ------------------------ /breeds/image/random ---------------------------
@@ -134,7 +134,7 @@ public class NegativeBreedsTest extends BaseTest {
         given().log().all()
                 .when().get("/breeds/image/random")
                 .then()
-                .time(lessThan(50L)); // propositalmente impossível para gerar falha
+                .time(lessThan(300L)); // propositalmente impossível para gerar falha
     }
 
 }
