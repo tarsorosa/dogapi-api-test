@@ -1,7 +1,4 @@
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import java.util.Map;
-
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
@@ -10,7 +7,6 @@ public class NegativeBreedsTest extends BaseTest {
 // -------------------------- /breeds/list/all -----------------------------
 
     // Cenário 1: endpoint inválido (http 404)
-    @Tag("negativo")
     @Test
     public void shouldReturn404ForInvalidEndpointListAll() {
         given().log().all()
@@ -21,7 +17,6 @@ public class NegativeBreedsTest extends BaseTest {
     }
 
     // Cenário 2: método HTTP incorreto  (http 405)
-    @Tag("negativo")
     @Test
     public void shouldReturn405ForPostOnGetEndpointListAll() {
         given().log().all()
@@ -32,7 +27,6 @@ public class NegativeBreedsTest extends BaseTest {
     }
 
     // Cenário 3: URL mal formada (http 404)
-    @Tag("negativo")
     @Test
     public void shouldReturn404ForMalformedUrlEndpointListAll() {
         given().log().all()
@@ -43,7 +37,6 @@ public class NegativeBreedsTest extends BaseTest {
     }
 
     // Cenário 4: tempo de resposta abaixo de limite (teste proposital de falha)
-    @Tag("negativo")
     @Test
     public void shouldFailIfResponseTooSlowEndepointListAll() {
         given().log().all()
@@ -55,7 +48,6 @@ public class NegativeBreedsTest extends BaseTest {
 // ------------------------ /breed/hound/images ---------------------------
 
     // Cenário 1: endpoint inválido (http 404)
-    @Tag("negativo")
     @Test
     public void shouldReturn404ForInvalidEndpointHoundImages() {
         given().log().all()
@@ -66,7 +58,6 @@ public class NegativeBreedsTest extends BaseTest {
     }
 
     // Cenário 2: método HTTP incorreto (http 405)
-    @Tag("negativo")
     @Test
     public void shouldReturn405ForPostOnGetEndpointHoundImages() {
         given().log().all()
@@ -77,7 +68,6 @@ public class NegativeBreedsTest extends BaseTest {
     }
 
     // Cenário 3: raça inválida informada (http 404)
-    @Tag("negativo")
     @Test
     public void shouldReturn404ForInvalidBreedEndpointHoundImages() {
         given().log().all()
@@ -88,7 +78,6 @@ public class NegativeBreedsTest extends BaseTest {
     }
 
     // Cenário 4: URL mal formada (http 404)
-    @Tag("negativo")
     @Test
     public void shouldReturn404ForMalformedUrlEndpointHoundImages() {
         given().log().all()
@@ -99,7 +88,6 @@ public class NegativeBreedsTest extends BaseTest {
     }
 
     // Cenário 5: tempo de resposta abaixo de limite (teste proposital de falha)
-    @Tag("negativo")
     @Test
     public void shouldFailIfResponseTooSlowEndpointHoundImages() {
         given().log().all()
@@ -111,7 +99,6 @@ public class NegativeBreedsTest extends BaseTest {
 // ------------------------ /breeds/image/random ---------------------------
 
     // Cenário 1: endpoint inválido (http 404)
-    @Tag("negativo")
     @Test
     public void shouldReturn404ForInvalidEndpointImageRandom() {
         given().log().all()
@@ -122,7 +109,6 @@ public class NegativeBreedsTest extends BaseTest {
     }
 
     // Cenário 2: método HTTP incorreto (http 405)
-    @Tag("negativo")
     @Test
     public void shouldReturn405ForPostOnGetEndpointImageRandom() {
         given().log().all()
@@ -133,7 +119,6 @@ public class NegativeBreedsTest extends BaseTest {
     }
 
     // Cenário 3: URL mal formada (http 404)
-    @Tag("negativo")
     @Test
     public void shouldReturn404ForMalformedUrlImageRandom() {
         given().log().all()
@@ -144,7 +129,6 @@ public class NegativeBreedsTest extends BaseTest {
     }
 
     // Cenário 4: tempo de resposta abaixo de limite (teste proposital de falha)
-    @Tag("negativo")
     @Test
     public void shouldFailIfResponseTooSlowImageRandom() {
         given().log().all()

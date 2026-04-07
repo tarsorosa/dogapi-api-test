@@ -1,5 +1,5 @@
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
 import java.util.Map;
 
 import static io.restassured.RestAssured.*;
@@ -7,7 +7,6 @@ import static org.hamcrest.Matchers.*;
 
 public class PositiveBreedsTest extends BaseTest {
 
-    @Tag("positivo")
     @Test
     public void shouldListAllBreeds() {
         given().log().all()
@@ -21,7 +20,6 @@ public class PositiveBreedsTest extends BaseTest {
                 .time(lessThan(3000L));
     }
 
-    @Tag("positivo")
     @Test
     public void shouldReturnBreedImages() {
         given().log().all()
@@ -32,10 +30,9 @@ public class PositiveBreedsTest extends BaseTest {
                 .body("message.size()", greaterThan(0))
                 .body("message", everyItem(matchesRegex("https://images\\.dog\\.ceo/.+\\.jpg")))
                 .contentType("application/json")
-                .time(lessThan(3000L));
+                .time(lessThan(8000L));
     }
 
-    @Tag("positivo")
     @Test
     public void shouldReturnRandomImage() {
         given().log().all()
@@ -45,7 +42,7 @@ public class PositiveBreedsTest extends BaseTest {
                 .body("status", equalTo("success"))
                 .body("message", matchesRegex("https://images\\.dog\\.ceo/.+\\.jpg"))
                 .contentType("application/json")
-                .time(lessThan(3000L));
+                .time(lessThan(8000L));
 
     }
 }

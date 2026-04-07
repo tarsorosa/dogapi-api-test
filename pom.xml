@@ -52,16 +52,31 @@
 
     <build>
         <plugins>
+            <!-- Surefire para filtrar testes pela @tag -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
-                    <groups>${testTags}</groups>
+                    <properties>
+                        <configurationParameters>
+                            junit.jupiter.tags.include=${testTags}
+                        </configurationParameters>
+                    </properties>
                 </configuration>
             </plugin>
-
         </plugins>
-
     </build>
+
+    <reporting>
+        <plugins>
+            <!-- Surefire Report para gerar o relatório HTML -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>3.0.0</version>
+            </plugin>
+        </plugins>
+    </reporting>
+
 </project>
